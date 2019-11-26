@@ -7,41 +7,41 @@ const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
 // 异步函数a
-    var a = function () {
-      return new Promise(function (resolve, reject) {
-        setTimeout(function () {
-          console.log('a')
-          resolve('a')
-        }, 1000)
-      })
-    }
+var a = function () {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log('a')
+      resolve('a')
+    }, 1000)
+  })
+}
 
-    // 异步函数b
-    var b = function (data) {
-      return new Promise(function (resolve, reject) {
-        console.log(data + 'b')
-        resolve(data + 'b')
-      })
-    }
+// 异步函数b
+var b = function (data) {
+  return new Promise(function (resolve, reject) {
+    console.log(data + 'b')
+    resolve(data + 'b')
+  })
+}
 
-    // 异步函数c
-    var c = function (data) {
-      return new Promise(function (resolve, reject) {
-        setTimeout(function () {
-          console.log(data + 'c')
-          resolve(data + 'c')
-        }, 500)
-      })
-    }
+// 异步函数c
+var c = function (data) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log(data + 'c')
+      resolve(data + 'c')
+    }, 500)
+  })
+}
 
-    helper.asyncQueue([a, b,c])
-    // 实现二
-    const queue2 = async (funcArr) => {
-      let result = null
-      for (let func of funcArr) {
-        result = await func(result)
-      }
-    }
+helper.asyncQueue([a, b,c])
+// 实现二
+const queue2 = async (funcArr) => {
+  let result = null
+  for (let func of funcArr) {
+    result = await func(result)
+  }
+}
 
 const obj1 = {
   a: {

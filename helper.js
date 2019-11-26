@@ -85,3 +85,5 @@ export const throttle = (fn, time) => {
     }, time)
   }
 }
+
+// 实现 AOP，before after
