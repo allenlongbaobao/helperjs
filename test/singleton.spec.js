@@ -12,16 +12,16 @@ describe('单例模式', () => {
     assert.equal(user2.name, 'alice')
   })
 
-  it ('调用单例模式，有返回值的情况', () => {
-    const Create2 = function () {
-      return {
-        name: 'allen'
-      }
-    }
-    const user = new Singleton(Create2)
-    const user2 = new Singleton(Create2)
-    console.log('user', user)
-    assert.equal(user, user2)
-    assert.equal(user.name,'allen')
-  })
+  // it ('调用单例模式，有返回值的情况, 试图构造不同构造函数的单例', () => {
+  //   const Create2 = function () {
+  //     return {
+  //       name: 'allen'
+  //     }
+  //   }
+  //   const user = new Singleton(Create2)
+  //   const user2 = new Singleton(Create2)
+  //   console.log('user', user)
+  //   assert.equal(user, user2)
+  //   assert.equal(user.name,'allen')
+  // })
 })

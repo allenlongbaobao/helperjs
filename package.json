@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "webpack",
-    "test": "mocha --require babel-core/register ./test/*.js"
+    "test": "mocha --watch --require babel-core/register ./test/*.js"
   },
   "babel": {
     "presets": [
