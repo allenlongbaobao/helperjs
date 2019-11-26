@@ -61,7 +61,7 @@ Function.prototype.apply2 = function (context) {
 // 手动实现 Bind
 
 // 防抖
-export const debunce = (fn, time) => {
+export const debounce = (fn, time) => {
   let t = null
 
   return () => {
@@ -86,4 +86,23 @@ export const throttle = (fn, time) => {
   }
 }
 
-// 实现 AOP，before after
+// TODO: 实现 AOP，before after
+
+// 单例模式
+/**
+ * why use bind and not use apply directly, because when meet
+ *  function() {
+ *    this.name = 'xx' 
+ *  }
+ *  not return func, apply() will return undefined
+ */
+export const Singleton = (function () {
+  var instance = null
+  return function (fn) {
+    if (!instance){
+      const funRunner = fn.bind(this, arguments)
+      instance = new funRunner()
+    }
+    return instance
+  }
+})()
